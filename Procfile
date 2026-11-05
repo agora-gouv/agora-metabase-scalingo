@@ -1,1 +1,1 @@
-web: bin/start-nginx ./bin/start
+web: (bin/run &) && HEROKU=true ./bin/start
