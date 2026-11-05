@@ -2,7 +2,7 @@ server {
     server_name localhost;
     listen <%= ENV['PORT'] %>;
 
-    location {
+    location / {
         <%= ENV['NGINX_ACCESS_RULES'] %>
         deny all;
 

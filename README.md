@@ -54,12 +54,14 @@ $ git push scalingo master
 The following environment variables are available for you to adjust, depending
 on your needs:
 
-| Name                 | Description                                                                              | Default value                                   |
-| -------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------- |
-| `BUILDPACK_URL`      | URL of the buildpack to use.                                                             | https://github.com/Scalingo/multi-buildpack.git |
-| `DATABASE_URL`       | URL of your database addon. **Only available if you have a database addon provisioned**. | Provided by Scalingo                            |
-| `MAX_METASPACE_SIZE` | Maximum amount of memory allocated to Java Metaspace[^1].                                | `512m` (512MB)     
-| `METABASE_VERSION`   | Force the metabase version (default=latest) |
+| Name                   | Description                                                                              | Default value                                   |
+| ---------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| `BUILDPACK_URL`        | URL of the buildpack to use.                                                             | https://github.com/Scalingo/multi-buildpack.git |
+| `DATABASE_URL`         | URL of your database addon. **Only available if you have a database addon provisioned**. | Provided by Scalingo                            |
+| `MAX_METASPACE_SIZE`   | Maximum amount of memory allocated to Java Metaspace[^1].                                | `512m` (512MB)                                  |
+| `METABASE_VERSION`     | Force the metabase version (default=latest)                                              |                                                 |
+| `METABASE_PORT`        | Internal port used by Metabase (Jetty). NGINX listens on `PORT` and proxies to this.    | `3000`                                          |
+| `NGINX_ACCESS_RULES`   | NGINX `allow` directives for IP filtering (e.g. `allow 1.2.3.4; allow 5.6.7.8;`). A `deny all` is always appended automatically. Leave empty to allow all IPs. | (empty = allow all) |
 
 Metabase also [supports many environment variables](https://www.metabase.com/docs/latest/operations-guide/environment-variables.html).
 
